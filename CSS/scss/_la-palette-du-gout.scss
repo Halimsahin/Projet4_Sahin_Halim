@@ -30,7 +30,7 @@ a {
 
 .header-logo {
     @extend %flex-center;
-    padding: 20px 0 10px 0;
+    padding: 20px 0 15px 0;
     img {
         width: 160px;
     }
@@ -70,7 +70,6 @@ a {
         right: 20px;
         top: 38px;
         display: flex;
-      
         margin-left: 300px;
         width: 50px;
         height: 50px;
@@ -141,3 +140,85 @@ a {
     }
 }
 
+@media screen and (min-width: 768px) {
+
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    /******Header******/
+
+    .return{
+        margin: 30px;
+    }
+
+    .header-logo {
+        padding: 25px 0 30px 0;
+        img {
+            width: 220px;
+        }
+    }  
+    
+    /*****Intro*****/
+
+    .main__intro-back {
+        img {
+            height: 400px;
+            object-fit: cover;
+        }
+    }
+
+    /******Menu*****/
+    
+    .main__menu {
+        margin: -50px 14vw 0 14vw;
+        padding: 30px 14vw 15px 14vw;
+    }
+
+    .main__menu-title {
+        display: block;
+        h1 {
+            justify-content: center;
+            margin-right: 70px;
+        }
+        i {
+            right: 340px;
+            top: 48px;
+            margin-left: 300px;
+            font-size: 26px;
+    }
+    }
+    
+    /******Footer*****/
+
+    footer {
+        flex-direction: row-reverse;
+        padding: 40px 80px 20px 25px;
+    }
+    
+    .footer-title {
+        h3 {
+            margin: 5px 0 15px 100px;
+        }
+    }
+    
+    .footer-list {
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+        .gras-space {
+            display: flex;
+            margin-right: 30px;
+            gap: 10px;
+            font-weight: 500;
+        }
+        a {
+            gap: 10px;
+            p {
+                margin: 0;  
+            }
+        }
+    }
+
+}

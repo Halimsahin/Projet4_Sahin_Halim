@@ -32,7 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 1440px;
+    
 }
 
 a {
@@ -74,11 +74,13 @@ a {
     @extend %flex-center;
     flex-wrap: wrap;
     background-color: $main-bg-color;  
+    flex-direction: column;
 }
 
 .main__intro-txt {
     @extend %flex-center;
     flex-wrap: wrap;
+    flex-direction: column;
     h1 {
         text-align: center;
         margin: 40px 40px 10px 40px;
@@ -257,4 +259,116 @@ footer {
         font-size: 15px;
       }
     }
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    /******Header*****/
+
+.header__logo {
+    padding: 30px 0 30px 0;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.0);
+    img {
+        width: 220px;
+    }
+}
+
+.header__loc {
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.0);
+}
+
+/******Intro******/
+
+.main__intro {
+    flex-direction: column; 
+}
+
+.main__intro-txt {
+    flex-direction: column; 
+    h1 {
+        font-size: 40px;
+        margin: 30px 40px 30px 40px;
+    }
+}
+
+/*****Fonctionnement****/
+
+.main__fonction {
+    margin: 30px 11vw 50px 12vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.main__fonction-title {
+    width: 100%;
+}
+
+.main__fonction-list {
+    width: 30%;
+    .list-btn {
+        padding: 10px 0px 10px 0;
+        .list-center  {
+            gap: 1.5vw;  
+        }
+    }
+}
+
+/*******Restaurants*******/
+
+.main__restaurants {
+    padding: 40px 12vw 70px 12vw;
+}
+
+.main__restaurants-cards {
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    a {
+        width: 45%;
+        .card {
+            margin-bottom: 40px;
+            .card-content {
+                i {
+                    position: initial;
+                    margin-left: 1vw;
+                   
+                }
+            }
+        }
+    }
+}    
+
+/******Footer*****/
+
+footer {
+    flex-direction: row-reverse;
+    padding: 40px 80px 20px 25px;
+}
+
+.footer-title {
+    h3 {
+        margin: 5px 0 15px 100px;
+    }
+}
+
+.footer-list {
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    .gras-space {
+        display: flex;
+        margin-right: 30px;
+        gap: 10px;
+        font-weight: 500;
+    }
+    a {
+        gap: 10px;
+        p {
+            margin: 0;  
+        }
+    }
+}
+
 }
