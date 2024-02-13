@@ -1,0 +1,143 @@
+/*******Général******/
+
+* {
+    font-family: 'Roboto' , sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin : 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/******Header******/
+
+.return{
+    margin: 20px;
+    font-size: 22px;
+    position: absolute;
+}
+
+.header-logo {
+    @extend %flex-center;
+    padding: 20px 0 10px 0;
+    img {
+        width: 160px;
+    }
+}    
+
+
+/*****Intro*****/
+
+.main__intro-back {
+    img {
+        width: 100%;
+    }
+}
+
+/******Menu*****/
+
+.main__menu {
+    border: solid 1px $main-bg-color;
+    background-color: $main-bg-color;
+    border-radius: 50px 50px 0 0;
+    padding: 20px 15px 15px 15px;
+    margin-top: -50px;
+    position: relative;
+}    
+
+.main__menu-title {
+    display: flex;
+    h1 {
+        display: flex;
+        font-family: 'shrikhand' , sans-serif;
+        font-size: 26px;
+        padding-left: 5px;
+        margin-right: 70px;
+    }
+    i {
+        position: absolute;
+        right: 20px;
+        top: 38px;
+        display: flex;
+      
+        margin-left: 300px;
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        padding-top: 10px;
+        font-weight: 100;
+}
+}
+
+.main__menu-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    .list-title {
+        display: flex;
+        border-bottom: solid 3px $btn-color-three;
+        width: auto;
+        h2 {
+            margin: 0;
+            padding-bottom: 5px;
+            font-weight: 400;
+            font-size: 18px;
+        }   
+    }
+    .list-card {
+        .list-txt {
+            border: solid 2px $main-bg-color;
+            background-color: white;
+            margin: 10px 0 10px 0;
+            padding: 10px 15px 10px 15px;
+            border-radius: 20px;
+            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.10);
+            h3 {
+                margin: 0;
+                padding-bottom: 5px;   
+            }
+            .txt {
+                display: flex;
+                justify-content: space-between;
+            }
+            p {
+                margin: 0;
+                span {
+                    font-weight: 600;
+                }   
+            }
+
+        }
+    }
+}
+
+.extend {
+    @extend %flex-center;
+}
+
+.main__menu-btn {
+    @extend %flex-center;
+    width: 50%;
+    border: solid 1px grey;
+    border-radius: 40px;
+    padding: 5px 20px;
+    margin-bottom: 50px;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.20);
+    background: linear-gradient(-5deg, $btn-color-one, $btn-color-two);
+    a {
+        color: white;
+        font-size: 14px;
+    }
+}
+
