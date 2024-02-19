@@ -40,6 +40,11 @@ a {
 
 /******Header******/
 
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .return{
     display: flex;
     margin: 20px;
@@ -103,7 +108,7 @@ a {
     i {
         position: absolute;
         right: 20px;
-        top: 38px;
+        top: 15px;
         display: flex;
         margin-left: 300px;
         width: 50px;
@@ -113,7 +118,7 @@ a {
     }
     .fa-solid {
         opacity: 0;
-        &:active {
+        &:hover {
             animation: full 0.2s 0.1s ease-out forwards;
         }
     }
@@ -143,14 +148,44 @@ a {
             border-radius: 20px;
             box-shadow: 0 6px 6px rgba(0, 0, 0, 0.10);
             position: relative;
-            &:active {
-                width: 85%;
-                border-radius: 20px 0 0 20px;
+            &:hover {
+                span {
+                    animation: span 0.3s ease-out forwards;
+                }
+                @keyframes span {
+                    100% {
+                        margin-right: 65px;
+                    }
+                }
+                .check-btn {
+                    animation: translate 0.1s 0.3s ease-out forwards;
+                }
+                @keyframes translate{
+                    100% {
+                        opacity: 1;
+                    }
+                }
+                p {
+                    text-overflow: ellipsis;
+                }
             }
             .check-btn {
                 position: absolute;
-                right: 30px;
-            }
+                right: -2px;
+                top: 0px;
+                border-left: solid 1px $btn-color-three;
+                border-radius: 0 20px 20px 0;
+                padding: 24px 25px 24px 25px;
+                background-color: $btn-color-three;
+                opacity: 0;
+                }
+                i {
+                    border: solid 1px white;
+                    border-radius: 50%;
+                    padding: 2px;
+                    background-color: white;
+                    color: $btn-color-three;
+                }
             h3 {
                 margin: 0;
                 padding-bottom: 5px;   
@@ -293,19 +328,20 @@ footer {
     }
 
     .main__menu-title {
-        display: block;
-        position: relative;
+        display: flex;
         gap: 10px;
         h1 {
             padding-left: 12vw;
             margin-bottom: 50px;
+            margin-right: 10px;
         }
         i {
-            top: 5px;
-            right: 200px;
-            font-size: 26px;
+            position: static;
             margin: 0;
-            padding: 0;
+            display: flex;
+            align-items: center;
+            height: 70px;
+
     }
     }
     

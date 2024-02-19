@@ -42,6 +42,11 @@ a {
 }
 
 /******Header******/
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .return {
   display: flex;
   margin: 20px;
@@ -99,7 +104,7 @@ a {
 .main__menu-title i {
   position: absolute;
   right: 20px;
-  top: 38px;
+  top: 15px;
   display: flex;
   margin-left: 300px;
   width: 50px;
@@ -110,7 +115,7 @@ a {
 .main__menu-title .fa-solid {
   opacity: 0;
 }
-.main__menu-title .fa-solid:active {
+.main__menu-title .fa-solid:hover {
   animation: full 0.2s 0.1s ease-out forwards;
 }
 
@@ -139,13 +144,41 @@ a {
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
   position: relative;
 }
-.main__menu-list .list-card .list-txt:active {
-  width: 85%;
-  border-radius: 20px 0 0 20px;
+.main__menu-list .list-card .list-txt:hover span {
+  animation: span 0.3s ease-out forwards;
+}
+@keyframes span {
+  100% {
+    margin-right: 65px;
+  }
+}
+.main__menu-list .list-card .list-txt:hover .check-btn {
+  animation: translate 0.1s 0.3s ease-out forwards;
+}
+@keyframes translate {
+  100% {
+    opacity: 1;
+  }
+}
+.main__menu-list .list-card .list-txt:hover p {
+  text-overflow: ellipsis;
 }
 .main__menu-list .list-card .list-txt .check-btn {
   position: absolute;
-  right: 30px;
+  right: -2px;
+  top: 0px;
+  border-left: solid 1px #99E2D0;
+  border-radius: 0 20px 20px 0;
+  padding: 24px 25px 24px 25px;
+  background-color: #99E2D0;
+  opacity: 0;
+}
+.main__menu-list .list-card .list-txt i {
+  border: solid 1px white;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: white;
+  color: #99E2D0;
 }
 .main__menu-list .list-card .list-txt h3 {
   margin: 0;
@@ -262,20 +295,20 @@ footer {
     padding: 30px 14vw 15px 14vw;
   }
   .main__menu-title {
-    display: block;
-    position: relative;
+    display: flex;
     gap: 10px;
   }
   .main__menu-title h1 {
     padding-left: 12vw;
     margin-bottom: 50px;
+    margin-right: 10px;
   }
   .main__menu-title i {
-    top: 5px;
-    right: 200px;
-    font-size: 26px;
+    position: static;
     margin: 0;
-    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 70px;
   }
   /******Footer*****/
   footer {
