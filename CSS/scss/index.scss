@@ -1,23 +1,17 @@
-//Variable//
-$btn-color-one: #9356DC;
-$btn-color-two: #FF79DA;
-$btn-color-three: #99E2D0;
-$btn-color-four: #008766;
-$main-bg-color: #F6F6F6;
-$header-color : #EAEAEA;
-
-////Mixins////
-
-
-
-////Placeholder////
-%flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /*****Général*****/
+
+@import './_variables';
+@import './_placeholders';
+
+@keyframes full {
+    100% {
+        opacity: 1;
+        font-weight: 900;
+        color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(-120deg, $btn-color-one, $btn-color-two); 
+    }
+}
 
 * {
     font-family: 'Roboto' , sans-serif;
@@ -28,11 +22,53 @@ body {
     margin : 0;
 }
 
+.loader {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    height: 300%;
+    display: flex;
+    justify-content: center;
+    padding-top: 300px;
+    z-index: 100;
+    transition: opacity 1s ease-in-out;
+    animation: opacity 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    @keyframes opacity {
+        100% {
+            opacity: 0;
+            display: none;
+        }    
+    }
+    i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        margin: 0 30px;
+        font-size: 30px;
+        animation: loader infinite 0.3s alternate;
+    }
+    .fa-bell-concierge {
+        animation-delay: 0.05s;
+    }
+    .fa-wine-glass {
+        animation-delay: 0.1s;
+    }
+    @keyframes loader {
+        100% {
+            transform: translateY(-30px);
+        }
+    }
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    
+    width: 100%; 
 }
 
 a {
@@ -98,6 +134,11 @@ a {
     margin-bottom: 50px;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.20);
     background: linear-gradient(-5deg, $btn-color-one, $btn-color-two);
+    &:hover {
+        filter: brightness(1.10);
+        box-shadow: 1px 6px 14px rgba(0, 0, 0, 0.25);
+        transition: 500ms;
+    }
     a {
         color: white;
         font-size: 14px;
@@ -178,6 +219,95 @@ a {
     flex-direction: column;
     width: 100%;
     gap: 17px;
+    position: relative;
+    .heart-one {
+        position: absolute;
+        width: 100%;
+        i {
+            display: flex;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            position: absolute;
+            z-index: 50;
+            right: 15px;
+            top: 188px;
+            padding-top: 10px;
+        }
+        .fa-solid {
+            opacity: 0;
+            &:hover {
+                animation: full 0.2s 0.1s ease-out forwards;
+            }
+        }   
+    }
+    .heart-two {
+        position: absolute;
+        width: 100%;
+        i {
+            display: flex;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            position: absolute;
+            z-index: 50;
+            right: 15px;
+            top: 465px;
+            padding-top: 10px;
+        }
+        .fa-solid {
+            opacity: 0;
+            &:hover {
+                animation: full 0.2s 0.1s ease-out forwards;
+            }
+        }   
+    }
+    .heart-three {
+        position: absolute;
+        width: 100%;
+        i {
+            display: flex;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            position: absolute;
+            z-index: 50;
+            right: 15px;
+            top: 743px;
+            padding-top: 10px;
+        }
+        .fa-solid {
+            opacity: 0;
+            &:hover {
+                animation: full 0.2s 0.1s ease-out forwards;
+            }
+        }   
+    }
+    .heart-four {
+        position: absolute;
+        width: 100%;
+        i {
+            display: flex;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            position: absolute;
+            z-index: 50;
+            right: 15px;
+            top: 1020px;
+            padding-top: 10px;
+        }
+        .fa-solid {
+            opacity: 0;
+            &:hover {
+                animation: full 0.2s 0.1s ease-out forwards;
+            }
+        }   
+    }
     a {
         width: 100%;
         .card {
@@ -185,8 +315,25 @@ a {
             border-radius: 20px;
             width: 100%;
             height: 260px;
+            position: relative;
+            .new {
+                display: flex;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                align-items: center;
+                justify-content: flex-end;
+                border: solid 1px $btn-color-three;
+                background-color: $btn-color-three;
+                padding: 5px 10px;
+                font-size: 14px;
+                font-weight: 500;
+                color: #008766;
+                box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.20);
+            }
             img {
                 object-fit: cover;
+                background-position: bottom;
                 width: 100%;
                 height: 180px;
                 border-top-left-radius: 20px;
@@ -202,20 +349,6 @@ a {
                     margin: 0;
                     padding-left: 10px;
                 }
-                i {
-                    display: flex;
-                    align-items: center;
-                    width: 50px;
-                    height: 50px;
-                    font-size: 24px;
-                    position: absolute;
-                    right: 15px;
-                    padding-top: 10px;
-                    font-weight: 100;
-                }
-                .fa-solid {
-                    display: none;
-                }  
             }
         }
     }
@@ -263,6 +396,13 @@ footer {
 
 
 @media screen and (min-width: 1024px) {
+
+    .loader {
+        i {
+            margin: 0 50px;
+            font-size: 50px;
+        }
+    }
 
     /******Header*****/
 
@@ -325,15 +465,33 @@ footer {
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
+    .heart-one {
+        right: 41.7vw;
+    }
+    .heart-two {
+        top: -280px;
+    }
+    .heart-three {
+        right: 41.7vw;
+        top: -235px;
+    }
+    .heart-four {
+        top: -515px;
+    }
     a {
         width: 45%;
         .card {
             margin-bottom: 40px;
             .card-content {
-                i {
-                    position: initial;
-                    margin-left: 1vw;
-                   
+                position: relative;
+                .card-txt {
+                    width: 560px;
+                    h3 {
+                        padding-left: 20px;
+                    }
+                    p {
+                        padding-left: 20px;
+                    }
                 }
             }
         }

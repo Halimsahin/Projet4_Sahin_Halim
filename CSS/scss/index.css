@@ -1,11 +1,21 @@
 @charset "UTF-8";
+/*****Général*****/
 .main__fonction-list .list-btn .list-center, .main__fonction-list .list-btn .list-num, .main__intro-txt, .main__intro, .header__loc, .header__logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/*****Général*****/
+@keyframes full {
+  100% {
+    opacity: 1;
+    font-weight: 900;
+    color: transparent;
+    -webkit-background-clip: text;
+            background-clip: text;
+    background-image: linear-gradient(-120deg, #9356DC, #FF79DA);
+  }
+}
 * {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
@@ -13,6 +23,49 @@
 
 body {
   margin: 0;
+}
+
+.loader {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  height: 300%;
+  display: flex;
+  justify-content: center;
+  padding-top: 300px;
+  z-index: 100;
+  transition: opacity 1s ease-in-out;
+  animation: opacity 2s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+@keyframes opacity {
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+.loader i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 30px;
+  font-size: 30px;
+  animation: loader infinite 0.3s alternate;
+}
+.loader .fa-bell-concierge {
+  animation-delay: 0.05s;
+}
+.loader .fa-wine-glass {
+  animation-delay: 0.1s;
+}
+@keyframes loader {
+  100% {
+    transform: translateY(-30px);
+  }
 }
 
 .main-container {
@@ -78,6 +131,11 @@ a {
   margin-bottom: 50px;
   box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
   background: linear-gradient(-5deg, #9356DC, #FF79DA);
+}
+.main__intro-btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 1px 6px 14px rgba(0, 0, 0, 0.25);
+  transition: 500ms;
 }
 .main__intro-btn a {
   color: white;
@@ -152,6 +210,95 @@ a {
   flex-direction: column;
   width: 100%;
   gap: 17px;
+  position: relative;
+}
+.main__restaurants-cards .heart-one {
+  position: absolute;
+  width: 100%;
+}
+.main__restaurants-cards .heart-one i {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  position: absolute;
+  z-index: 50;
+  right: 15px;
+  top: 188px;
+  padding-top: 10px;
+}
+.main__restaurants-cards .heart-one .fa-solid {
+  opacity: 0;
+}
+.main__restaurants-cards .heart-one .fa-solid:hover {
+  animation: full 0.2s 0.1s ease-out forwards;
+}
+.main__restaurants-cards .heart-two {
+  position: absolute;
+  width: 100%;
+}
+.main__restaurants-cards .heart-two i {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  position: absolute;
+  z-index: 50;
+  right: 15px;
+  top: 465px;
+  padding-top: 10px;
+}
+.main__restaurants-cards .heart-two .fa-solid {
+  opacity: 0;
+}
+.main__restaurants-cards .heart-two .fa-solid:hover {
+  animation: full 0.2s 0.1s ease-out forwards;
+}
+.main__restaurants-cards .heart-three {
+  position: absolute;
+  width: 100%;
+}
+.main__restaurants-cards .heart-three i {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  position: absolute;
+  z-index: 50;
+  right: 15px;
+  top: 743px;
+  padding-top: 10px;
+}
+.main__restaurants-cards .heart-three .fa-solid {
+  opacity: 0;
+}
+.main__restaurants-cards .heart-three .fa-solid:hover {
+  animation: full 0.2s 0.1s ease-out forwards;
+}
+.main__restaurants-cards .heart-four {
+  position: absolute;
+  width: 100%;
+}
+.main__restaurants-cards .heart-four i {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  position: absolute;
+  z-index: 50;
+  right: 15px;
+  top: 1020px;
+  padding-top: 10px;
+}
+.main__restaurants-cards .heart-four .fa-solid {
+  opacity: 0;
+}
+.main__restaurants-cards .heart-four .fa-solid:hover {
+  animation: full 0.2s 0.1s ease-out forwards;
 }
 .main__restaurants-cards a {
   width: 100%;
@@ -161,10 +308,27 @@ a {
   border-radius: 20px;
   width: 100%;
   height: 260px;
+  position: relative;
+}
+.main__restaurants-cards a .card .new {
+  display: flex;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  align-items: center;
+  justify-content: flex-end;
+  border: solid 1px #99E2D0;
+  background-color: #99E2D0;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #008766;
+  box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.2);
 }
 .main__restaurants-cards a .card img {
   -o-object-fit: cover;
      object-fit: cover;
+  background-position: bottom;
   width: 100%;
   height: 180px;
   border-top-left-radius: 20px;
@@ -180,20 +344,6 @@ a {
 .main__restaurants-cards a .card .card-content p {
   margin: 0;
   padding-left: 10px;
-}
-.main__restaurants-cards a .card .card-content i {
-  display: flex;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-  position: absolute;
-  right: 15px;
-  padding-top: 10px;
-  font-weight: 100;
-}
-.main__restaurants-cards a .card .card-content .fa-solid {
-  display: none;
 }
 
 /******Footer******/
@@ -234,6 +384,10 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
+  .loader i {
+    margin: 0 50px;
+    font-size: 50px;
+  }
   /******Header*****/
   .header__logo {
     padding: 30px 0 30px 0;
@@ -284,15 +438,36 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+  .main__restaurants-cards .heart-one {
+    right: 41.7vw;
+  }
+  .main__restaurants-cards .heart-two {
+    top: -280px;
+  }
+  .main__restaurants-cards .heart-three {
+    right: 41.7vw;
+    top: -235px;
+  }
+  .main__restaurants-cards .heart-four {
+    top: -515px;
+  }
   .main__restaurants-cards a {
     width: 45%;
   }
   .main__restaurants-cards a .card {
     margin-bottom: 40px;
   }
-  .main__restaurants-cards a .card .card-content i {
-    position: initial;
-    margin-left: 1vw;
+  .main__restaurants-cards a .card .card-content {
+    position: relative;
+  }
+  .main__restaurants-cards a .card .card-content .card-txt {
+    width: 560px;
+  }
+  .main__restaurants-cards a .card .card-content .card-txt h3 {
+    padding-left: 20px;
+  }
+  .main__restaurants-cards a .card .card-content .card-txt p {
+    padding-left: 20px;
   }
   /******Footer*****/
   footer {

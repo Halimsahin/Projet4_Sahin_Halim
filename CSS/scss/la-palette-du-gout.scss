@@ -1,4 +1,23 @@
 /*******Général******/
+@import './_variables';
+@import './_placeholders';
+
+@keyframes apparition {
+    100% {
+        opacity : 1;
+        transform: none;
+    }
+}
+
+@keyframes full {
+    100% {
+        opacity: 1;
+        font-weight: 900;
+        color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(-120deg, $btn-color-one, $btn-color-two); 
+    }
+}
 
 * {
     font-family: 'Roboto' , sans-serif;
@@ -12,7 +31,6 @@ body {
 .main-container {
     display: flex;
     flex-direction: column;
-    max-width: 1440px;
 }
 
 a {
@@ -23,12 +41,19 @@ a {
 /******Header******/
 
 .return{
+    display: flex;
     margin: 20px;
+    width: 20px;
     font-size: 22px;
-    position: absolute;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.4s 1s ease-out forwards;
 }
 
 .header-logo {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.4s 1s ease-out forwards;
     @extend %flex-center;
     padding: 20px 0 15px 0;
     img {
@@ -42,6 +67,9 @@ a {
 .main__intro-back {
     img {
         width: 100%;
+        opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.4s 0.8s ease-out forwards;
     }
 }
 
@@ -54,16 +82,23 @@ a {
     padding: 20px 15px 15px 15px;
     margin-top: -50px;
     position: relative;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.4s 1s ease-out forwards;
 }    
 
 .main__menu-title {
     display: flex;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.4s 1s ease-out forwards;
     h1 {
         display: flex;
         font-family: 'shrikhand' , sans-serif;
         font-size: 26px;
         padding-left: 5px;
         margin-right: 70px;
+        
     }
     i {
         position: absolute;
@@ -75,8 +110,13 @@ a {
         height: 50px;
         font-size: 28px;
         padding-top: 10px;
-        font-weight: 100;
-}
+    }
+    .fa-solid {
+        opacity: 0;
+        &:active {
+            animation: full 0.2s 0.1s ease-out forwards;
+        }
+    }
 }
 
 .main__menu-list {
@@ -86,7 +126,7 @@ a {
     .list-title {
         display: flex;
         border-bottom: solid 3px $btn-color-three;
-        width: auto;
+        width: 40px;
         h2 {
             margin: 0;
             padding-bottom: 5px;
@@ -102,6 +142,15 @@ a {
             padding: 10px 15px 10px 15px;
             border-radius: 20px;
             box-shadow: 0 6px 6px rgba(0, 0, 0, 0.10);
+            position: relative;
+            &:active {
+                width: 85%;
+                border-radius: 20px 0 0 20px;
+            }
+            .check-btn {
+                position: absolute;
+                right: 30px;
+            }
             h3 {
                 margin: 0;
                 padding-bottom: 5px;   
@@ -121,11 +170,32 @@ a {
     }
 }
 
+.one {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.4s 1.4s ease-out forwards;
+}
+
+.two {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.4s 2s ease-out forwards;
+}
+
+.three {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.4s 2.6s ease-out forwards;
+}
+
 .extend {
     @extend %flex-center;
 }
 
 .main__menu-btn {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.4s 2.8s ease-out forwards;
     @extend %flex-center;
     width: 50%;
     border: solid 1px grey;
@@ -134,11 +204,57 @@ a {
     margin-bottom: 50px;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.20);
     background: linear-gradient(-5deg, $btn-color-one, $btn-color-two);
+    &:hover {
+        filter: brightness(1.10);
+        box-shadow: 1px 6px 14px rgba(0, 0, 0, 0.25);
+        transition: 500ms;
+    }
     a {
         color: white;
         font-size: 14px;
     }
 }
+
+/******Footer******/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 20px 20px 15px 25px;
+    background-color: #353535;
+}
+
+.footer-title {
+    h3 {
+        margin: 5px 0 15px 0;
+        color: white;
+        width: 100px;
+        font-family: "Shrikhand" , sans-serif;
+        font-weight: 400;
+    }
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    a {
+      display: flex;
+      gap: 10px;
+      i {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 12px;
+      }
+      p {
+        color: white;
+        margin: 0 0 10px 0;
+        font-size: 15px;
+      }
+    }
+}
+
 
 @media screen and (min-width: 768px) {
 
@@ -178,15 +294,18 @@ a {
 
     .main__menu-title {
         display: block;
+        position: relative;
+        gap: 10px;
         h1 {
-            justify-content: center;
-            margin-right: 70px;
+            padding-left: 12vw;
+            margin-bottom: 50px;
         }
         i {
-            right: 340px;
-            top: 48px;
-            margin-left: 300px;
+            top: 5px;
+            right: 200px;
             font-size: 26px;
+            margin: 0;
+            padding: 0;
     }
     }
     
@@ -216,7 +335,7 @@ a {
         a {
             gap: 10px;
             p {
-                margin: 0;  
+                margin: 0px;  
             }
         }
     }
