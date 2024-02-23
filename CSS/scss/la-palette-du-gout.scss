@@ -158,26 +158,25 @@ header {
                     }
                 }
                 .check-btn {
-                    animation: translate 0.1s 0.3s ease-out forwards;
+                    display: block;
+                    animation: translate 0.3s ease-out forwards;
                 }
                 @keyframes translate{
                     100% {
-                        opacity: 1;
+                        margin-right: 0;
                     }
-                }
-                p {
-                    text-overflow: ellipsis;
                 }
             }
             .check-btn {
+                display: none;
                 position: absolute;
                 right: -2px;
                 top: 0px;
                 border-left: solid 1px $btn-color-three;
                 border-radius: 0 20px 20px 0;
                 padding: 24px 25px 24px 25px;
+                margin-right: -65px;
                 background-color: $btn-color-three;
-                opacity: 0;
                 }
                 i {
                     border: solid 1px white;
@@ -199,6 +198,11 @@ header {
                 span {
                     font-weight: 600;
                 }   
+            }
+            .ellipse {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
         }
