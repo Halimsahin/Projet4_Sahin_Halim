@@ -141,13 +141,15 @@ header {
     }
     .list-card {
         .list-txt {
-            border: solid 2px $main-bg-color;
+            border: solid 0px $main-bg-color;
             background-color: white;
-            margin: 10px 0 10px 0;
-            padding: 10px 15px 10px 15px;
+            margin: 12px 0 12px 0;
+            padding: 11.5px 15px 11.5px 15px;
             border-radius: 20px;
             box-shadow: 0 6px 6px rgba(0, 0, 0, 0.10);
             position: relative;
+            overflow: hidden;
+            display: flex;
             &:hover {
                 span {
                     animation: span 0.3s ease-out forwards;
@@ -185,14 +187,18 @@ header {
                     background-color: white;
                     color: $btn-color-three;
                 }
+            .txt {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                min-width: 0;
+                
+            }    
             h3 {
                 margin: 0;
                 padding-bottom: 5px;   
             }
-            .txt {
-                display: flex;
-                justify-content: space-between;
-            }
+        
             p {
                 margin: 0;
                 span {
@@ -203,6 +209,10 @@ header {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+            }
+            .price {
+                display: flex;
+                align-items: flex-end;
             }
 
         }
@@ -339,13 +349,19 @@ footer {
             margin-bottom: 50px;
             margin-right: 10px;
         }
-        i {
-            position: static;
+        .static {
+            position: relative;
             margin: 0;
             display: flex;
             align-items: center;
             height: 70px;
-
+            width: 50px;
+            margin-left: 20px;
+        }
+        i {
+            position: absolute;
+            
+            
     }
     }
     
