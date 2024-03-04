@@ -159,6 +159,9 @@ a {
   display: flex;
   margin-left: 10px;
 }
+.main__fonction-list:hover .list-btn i {
+  color: #9356DC;
+}
 .main__fonction-list .list-btn {
   display: flex;
   border: solid 1px #F6F6F6;

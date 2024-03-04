@@ -162,6 +162,13 @@ a {
 .main__fonction-list {
     display: flex;
     margin-left: 10px;
+    &:hover {
+        .list-btn {
+            i {
+                color: $btn-color-one;
+            }
+        }    
+    }
     .list-btn {
         display: flex;
         border: solid 1px $main-bg-color;
